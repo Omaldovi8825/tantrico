@@ -10,6 +10,13 @@ var gift = document.getElementById('don')
 var destiny = document.getElementById('destino')
 var mission = document.getElementById('mision')
 
+//desglose del nombre segun el numero
+var nomSoul = document.getElementById('almaNombre')
+var nomKarm = document.getElementById('karmaNombre')
+var nomGift = document.getElementById('donNombre')
+var nomDestiny = document.getElementById('destinoNombre')
+var nomMission = document.getElementById('misionNombre')
+
 //click en boton que despliega todos los mumeros
 function despliegaNumero(){
     let dia = day.value
@@ -29,6 +36,7 @@ function determinaNumeroDeAlma(numero){
     let digitoDos = Number(numero.charAt(1))
     let numeroAlma = digitiUno + digitoDos
     soul.innerHTML = numeroAlma
+    determinaNombreSegunNumero(numeroAlma, nomSoul)
 }
 
 //Karma: numero del mes de nacimiento
@@ -36,8 +44,10 @@ function determinaNumeroDeKarma(numero){
     let mes = Number(numero)
     if(mes == 12){
         karma.innerHTML = 3
+        determinaNombreSegunNumero(3, nomKarm)
     } else {
         karm.innerHTML = mes
+        determinaNombreSegunNumero(mes, nomKarm)
     }
 }
 
@@ -48,11 +58,14 @@ function determinaNumeroDeDon(numero){
     let numeroDon = penultimoDelAnio + ultimoDelAnio
     if(numeroDon <= 11) {
         gift.innerHTML = numeroDon
+        determinaNombreSegunNumero(numeroDon, nomGift)
     } else {
         let numeroDonToString = String(numeroDon)
         let numeroDon1 = Number(numeroDonToString.charAt(0))
         let numeroDon2 = Number(numeroDonToString.charAt(1))
-        gift.innerHTML = numeroDon1 + numeroDon2
+        let sumaDon1y2 = numeroDon1 + numeroDon2
+        gift.innerHTML = sumaDon1y2
+        determinaNombreSegunNumero(sumaDon1y2, nomGift)
     }
 }
 
@@ -65,11 +78,14 @@ function determinaNumerodeDestino(number){
     let numeroDestino = primerDigitoAnio + segundoDigitoAnio + tercerDigitoAnio + cuartoDigitoAnio
     if(numeroDestino <= 11 || numeroDestino == 22) {
         destiny.innerHTML = numeroDestino
+        determinaNombreSegunNumero(numeroDestino, nomDestiny)
     } else {
         let numeroDestinoToString = String(numeroDestino)
         let numeroDestino1 = Number(numeroDestinoToString.charAt(0))
         let numeroDestino2 = Number(numeroDestinoToString.charAt(1))
-        destiny.innerHTML = numeroDestino1 + numeroDestino2
+        let sumaDestino1y2 = numeroDestino1 + numeroDestino2
+        destiny.innerHTML = sumaDestino1y2
+        determinaNombreSegunNumero(sumaDestino1y2, nomDestiny)
     }
 }
 
@@ -86,6 +102,7 @@ function determinaNumeroDeMision(dia, mes, anio){
     let numeroDeMision = primerDigitoDia + segundoDigitoDia + primerDigitoMes + segundoDigitoMes + primerDigitoAnio + segundoDigitoAnio + tercerDigitoAnio + cuartoDigitoAnio
     if(numeroDeMision <= 11 || numeroDeMision == 22 || numeroDeMision == 33){
         mission.innerHTML = numeroDeMision
+        determinaNombreSegunNumero(numeroDeMision, nomMission)
     } else {
         console.log(numeroDeMision)
         let numerDeMisionToString = String(numeroDeMision)
@@ -94,8 +111,51 @@ function determinaNumeroDeMision(dia, mes, anio){
         let numeroDeMisionReducido = numeroDeMision1 + numeroDeMision2
         if(numeroDeMisionReducido == 12){
             mission.innerHTML = 3
+            determinaNombreSegunNumero(3, nomMission)
         } else {
             mission.innerHTML = numeroDeMisionReducido
+            determinaNombreSegunNumero(numeroDeMisionReducido, nomMission)
         }
+    }
+}
+
+//determinar nombre segun el numero
+function determinaNombreSegunNumero(numero, nombre){
+    switch(numero){
+        case 1:
+            nombre.innerHTML = "Líder inconsciente"
+            break
+        case 2:
+            nombre.innerHTML = "Mente negativa o mediador"
+            break
+        case 3:
+            nombre.innerHTML = "Artista o mente positiva"
+            break
+        case 4:
+            nombre.innerHTML = "Mente equilibrada"
+            break
+        case 5:
+            nombre.innerHTML = "Profesor o corporalista"
+            break
+        case 6:
+            nombre.innerHTML = "Místico"
+            break
+        case 7:
+            nombre.innerHTML = "Líder bondadoso"
+            break
+        case 8:
+            nombre.innerHTML = "Sanador"
+            break
+        case 9:
+            nombre.innerHTML = "Maestro de sí mismo"
+            break
+        case 10:
+            nombre.innerHTML = "Líder duro o número de sol"
+            break
+        case 11:
+        case 22:
+        case 33:
+            nombre.innerHTML = "Número gurú"
+            break        
     }
 }
