@@ -41,6 +41,12 @@ body {
     color: #584242;
 }
 
+.seccion1 span {
+    background-color: #ffffff9c;
+    border: 2px solid lavender;
+    color: black;
+}
+
 @media only screen and (max-width:500px){
     body {
     /*background-image: url(https://harmonia.la/imagen_nota/chakra_mantra_1.jpg);*/
