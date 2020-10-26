@@ -1,3 +1,10 @@
+body {
+    margin: 0;
+    background-image: url(https://harmonia.la/imagen_nota/mantras_meditar.jpg?width=1200&enable=upscale);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
 .titulo_principal{
     text-align: center;
 }
