@@ -1,26 +1,67 @@
 body {
     margin: 0;
-    background-image: url(https://harmonia.la/imagen_nota/mantras_meditar.jpg?width=1200&enable=upscale);
+    background-image: url(https://sondeyoga.com/wp-content/uploads/2016/08/om-mantra-yoga.jpg);
     background-size: 100%;
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
+    font-family: 'Kalam', cursive;
 }
 
 .titulo_principal{
     text-align: center;
+    font-size: 46px;
 }
 
-.fecha {
+.fecha, .input {
     text-align: center;
 }
 
-.fecha input{
-    width: 100px;
+.input input{
+    width: 55px;
+    height: 28px;
+    text-align: center;
+    border: 2px solid black;
 }
 
 .boton1{
     text-align: center;
+    margin-top: 36px;
+}
+
+.boton1 button {
+    padding: 15px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
 }
 
 .seccion1 {
-    text-align: center;
+    text-align: left;
+    margin-left: 5%;
+    font-size: 24px;
+    color: #584242;
+}
+
+.seccion1 span {
+    background-color: #ffffff9c;
+    border: 2px solid lavender;
+    color: black;
+}
+
+@media only screen and (max-width:500px){
+    body {
+    /*background-image: url(https://harmonia.la/imagen_nota/chakra_mantra_1.jpg);*/
+        background-repeat: repeat-y;    
+    }
+
+    .titulo_principal {
+        font-size: 38px;
+    }
+
+    .seccion1 {
+        font-size: 17px;
+    }
+
+    .boton1 {
+        margin-top: 22px;
+    }
 }
