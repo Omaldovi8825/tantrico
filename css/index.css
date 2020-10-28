@@ -1,8 +1,23 @@
 .header{
-    background-color: black;
-    width: 150px;
+    font-family: 'Grandstander';
+    font-size: 2em;
+    background: rgba(0, 0, 0, 0.607);
+    color: white;
+    padding: 0.5em;
+    text-align: center;
 
 }
+
+
+.fecha {
+    text-align: center;
+    font-family: 'Grandstander';
+    font-size: 1.2em;
+    color:white;
+    text-shadow: 1px 1px 5px black;
+    
+}
+
 
 body {
     margin: 0;
@@ -10,30 +25,12 @@ body {
     background-repeat: repeat-y;
 }
 
-.titulo_principal{
-    color: white;
-    
-    text-align: center;
-    font-family: 'Grandstander';
-    text-shadow: 2px 2px 15px rgb(6, 89, 104);
-    font-size: 40px;
-    
-}
-
-.fecha {
-    text-align: center;
-    font-family: 'Grandstander';
-    font-size: 20px;
-    color:white;
-    
-}
-
 .fecha input{
-    height: 50px;
-    width: 100px;
+    height:1.5em;
+    width: 3em;
     text-align: center;
     font-family:'Patrick Hand';
-    font-size: 25px;
+    font-size: 1.2em;
     background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
     border-radius: 5px;
 
@@ -52,12 +49,13 @@ body {
     border-radius: 10px;
     border-color: darkgreen;
     font-family: 'Patrick Hand';
+    font-size: 0.8em;
 }
 
 .container {
     
     text-align: left;
-    font-size: 16px;
+    font-size: 1.3em;
     font-family: 'Grandstander';
     color:rgb(17, 56, 75);
     margin-left: 20%;
@@ -75,10 +73,4 @@ body {
     margin-bottom: 10px;
     color: white;
     padding: 1.5em;
-}
-
-.footer {
-    position: absolute;
-    height: 50px;
-    width: 50px;
 }
