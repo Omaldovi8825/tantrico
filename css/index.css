@@ -6,21 +6,18 @@
 
 body {
     margin: 0;
-    background-size: 100%;
-    background-repeat: repeat-y;
+    background-image: url(https://sondeyoga.com/wp-content/uploads/2016/08/om-mantra-yoga.jpg);
 }
 
 .titulo_principal{
     color: white;
-    
     text-align: center;
     font-family: 'Grandstander';
     text-shadow: 2px 2px 15px rgb(6, 89, 104);
     font-size: 40px;
-    
 }
 
-.fecha {
+.fecha, .input {
     text-align: center;
     font-family: 'Grandstander';
     font-size: 20px;
@@ -36,14 +33,12 @@ body {
     font-size: 25px;
     background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
     border-radius: 5px;
-
 }
 
 .boton1{
     text-align: center;
     font-family: 'Henny Penny';
     font-size: 20px;
- 
 }
 
 .botonfeo{
@@ -55,7 +50,6 @@ body {
 }
 
 .container {
-    
     text-align: left;
     font-size: 16px;
     font-family: 'Grandstander';
@@ -63,8 +57,6 @@ body {
     margin-left: 20%;
     margin-right: 20%;
     display; flex;
-   
-
 }
 
 .item{
@@ -81,4 +73,44 @@ body {
     position: absolute;
     height: 50px;
     width: 50px;
+    margin-top: 36px;
+}
+
+.boton1 button {
+    padding: 15px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+}
+
+.seccion1 {
+    text-align: left;
+    margin-left: 5%;
+    font-size: 24px;
+    color: #584242;
+}
+
+.seccion1 span {
+    background-color: #ffffff9c;
+    border: 2px solid lavender;
+    color: black;
+}
+
+@media only screen and (max-width:500px){
+    body {
+    /*background-image: url(https://harmonia.la/imagen_nota/chakra_mantra_1.jpg);*/
+        background-repeat: repeat-y;    
+    }
+
+    .titulo_principal {
+        font-size: 38px;
+    }
+
+    .seccion1 {
+        font-size: 17px;
+    }
+
+    .boton1 {
+        margin-top: 22px;
+    }
 }

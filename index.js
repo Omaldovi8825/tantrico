@@ -1,101 +1,127 @@
-//desglose de fecha
-var day = document.getElementById('dia')
-var month = document.getElementById('mes')
-var year = document.getElementById('anio')
+//objeto que contiene los valores de fecha
+let fecha = {
+    day: document.getElementById('dia'),
+    month: document.getElementById('mes'),
+    year: document.getElementById('anio')
+}
 
-//desglose de numero
-var soul = document.getElementById('alma')
-var karm = document.getElementById('karma')
-var gift = document.getElementById('don')
-var destiny = document.getElementById('destino')
-var mission = document.getElementById('mision')
+//objeto que van a desplegar valor y nombre de cada numero
+let numeros = {
+    soul: document.getElementById('alma'),
+    karm: document.getElementById('karma'),
+    gift: document.getElementById('don'),
+    destiny: document.getElementById('destino'),
+    mission: document.getElementById('mision')
+}
+
+//function reducir numeros
+let reduceNumero = numero => {
+    if(numero > 11 && numero != 22 && numero != 33){
+        let numeroPos1 = Number(String(numero).charAt(0))
+        let numeroPos2 = Number(String(numero).charAt(1))
+        let result = numeroPos1 + numeroPos2
+        if(result > 11){
+            let numeroPos1 = Number(String(result).charAt(0))
+            let numeroPos2 = Number(String(result).charAt(1))
+            result = numeroPos1 + numeroPos2
+        }
+        return result
+    } else {
+        return numero
+    }
+}
+
 
 //click en boton que despliega todos los mumeros
 function despliegaNumero(){
-    let dia = day.value
-    let mes = month.value
-    let anio = year.value
+    let digitos = {
+        uno: Number(String(fecha.day.value).charAt(0)),
+        dos: Number(String(fecha.day.value).charAt(1)),
+        tres: Number(String(fecha.month.value).charAt(0)),
+        cuatro: Number(String(fecha.month.value).charAt(1)),
+        cinco: Number(String(fecha.year.value).charAt(0)),
+        seis: Number(String(fecha.year.value).charAt(1)),
+        siete: Number(String(fecha.year.value).charAt(2)),
+        ocho: Number(String(fecha.year.value).charAt(3)),
+    }  
 
-    determinaNumeroDeAlma(dia)
-    determinaNumeroDeKarma(mes)
-    determinaNumeroDeDon(anio)
-    determinaNumerodeDestino(anio)
-    determinaNumeroDeMision(dia, mes, anio)
+    calculaNumeroAlma(digitos)
+    calculaNumeroKarma(fecha.month.value)
+    calculaNumeroDon(digitos)
+    calculaNumeroDestino(digitos)
+    calculaNumeroMision(digitos)
 }
 
-//Alma: suma los digitos del dia de nacimiento
-function determinaNumeroDeAlma(numero){
-    let digitiUno = Number(numero.charAt(0))
-    let digitoDos = Number(numero.charAt(1))
-    let numeroAlma = digitiUno + digitoDos
-    soul.innerHTML = numeroAlma
+//calcula numero de alma
+function calculaNumeroAlma({uno, dos}){
+    let resultado =  reduceNumero(uno + dos)
+   determinaNombreSegunNumero(resultado, numeros.soul)
 }
 
-//Karma: numero del mes de nacimiento
-function determinaNumeroDeKarma(numero){
-    let mes = Number(numero)
-    if(mes == 12){
-        karma.innerHTML = 3
-    } else {
-        karm.innerHTML = mes
-    }
+//calcula numero de karma
+function calculaNumeroKarma(numero){
+    let resultado = reduceNumero(Number(numero))
+    determinaNombreSegunNumero(resultado, numeros.karm) 
 }
 
-//Don: suma los ultimos 2 digitos del anio
-function determinaNumeroDeDon(numero){
-    let penultimoDelAnio = Number(numero.charAt(2))
-    let ultimoDelAnio = Number(numero.charAt(3))
-    let numeroDon = penultimoDelAnio + ultimoDelAnio
-    if(numeroDon <= 11) {
-        gift.innerHTML = numeroDon
-    } else {
-        let numeroDonToString = String(numeroDon)
-        let numeroDon1 = Number(numeroDonToString.charAt(0))
-        let numeroDon2 = Number(numeroDonToString.charAt(1))
-        gift.innerHTML = numeroDon1 + numeroDon2
-    }
+//calcula numero de don
+function calculaNumeroDon({siete, ocho}){
+    let resultado = reduceNumero(siete + ocho)
+    determinaNombreSegunNumero(resultado, numeros.gift)
 }
 
-//Destino: suma todos los digitos del anio de nacimiento
-function determinaNumerodeDestino(number){
-    let primerDigitoAnio = Number(number.charAt(0))
-    let segundoDigitoAnio = Number(number.charAt(1))
-    let tercerDigitoAnio = Number(number.charAt(2))
-    let cuartoDigitoAnio = Number(number.charAt(3))
-    let numeroDestino = primerDigitoAnio + segundoDigitoAnio + tercerDigitoAnio + cuartoDigitoAnio
-    if(numeroDestino <= 11 || numeroDestino == 22) {
-        destiny.innerHTML = numeroDestino
-    } else {
-        let numeroDestinoToString = String(numeroDestino)
-        let numeroDestino1 = Number(numeroDestinoToString.charAt(0))
-        let numeroDestino2 = Number(numeroDestinoToString.charAt(1))
-        destiny.innerHTML = numeroDestino1 + numeroDestino2
-    }
+//calcula numero de destino
+function calculaNumeroDestino({cinco, seis, siete, ocho}){
+    let resultado = reduceNumero(cinco + seis + siete + ocho)
+    determinaNombreSegunNumero(resultado, numeros.destiny)
 }
 
-//Mision: suma los 8 digitos de la fecha de nacimiento
-function determinaNumeroDeMision(dia, mes, anio){
-    let primerDigitoDia = Number(dia.charAt(0))
-    let segundoDigitoDia = Number(dia.charAt(1))
-    let primerDigitoMes = Number(mes.charAt(0))
-    let segundoDigitoMes = Number(mes.charAt(1))
-    let primerDigitoAnio = Number(anio.charAt(0))
-    let segundoDigitoAnio = Number(anio.charAt(1))
-    let tercerDigitoAnio = Number(anio.charAt(2))
-    let cuartoDigitoAnio = Number(anio.charAt(3))
-    let numeroDeMision = primerDigitoDia + segundoDigitoDia + primerDigitoMes + segundoDigitoMes + primerDigitoAnio + segundoDigitoAnio + tercerDigitoAnio + cuartoDigitoAnio
-    if(numeroDeMision <= 11 || numeroDeMision == 22 || numeroDeMision == 33){
-        mission.innerHTML = numeroDeMision
-    } else {
-        console.log(numeroDeMision)
-        let numerDeMisionToString = String(numeroDeMision)
-        let numeroDeMision1 = Number(numerDeMisionToString.charAt(0))
-        let numeroDeMision2 = Number(numerDeMisionToString.charAt(1))
-        let numeroDeMisionReducido = numeroDeMision1 + numeroDeMision2
-        if(numeroDeMisionReducido == 12){
-            mission.innerHTML = 3
-        } else {
-            mission.innerHTML = numeroDeMisionReducido
-        }
+//calcula numero de Mision 
+function calculaNumeroMision({uno, dos, tres, cuatro, cinco, seis, siete, ocho}){
+    let resultado = reduceNumero(uno + dos + tres + cuatro + cinco + seis + siete + ocho)
+    determinaNombreSegunNumero(resultado, numeros.mission)
+}
+
+
+//determinar nombre segun el numero
+function determinaNombreSegunNumero(numero, nombre){
+    switch(numero){
+        case 1:
+            nombre.innerHTML = `${numero} Líder inconsciente`
+            break
+        case 2:
+            nombre.innerHTML = `${numero} Mente negativa o mediador`
+            break
+        case 3:
+            nombre.innerHTML = `${numero} Artista o mente positiva`
+            break
+        case 4:
+            nombre.innerHTML = `${numero} Mente equilibrada`
+            break
+        case 5:
+            nombre.innerHTML = `${numero} Profesor o corporalista`
+            break
+        case 6:
+            nombre.innerHTML = `${numero} Místico`
+            break
+        case 7:
+            nombre.innerHTML = `${numero} Líder bondadoso`
+            break
+        case 8:
+            nombre.innerHTML = `${numero} Sanador`
+            break
+        case 9:
+            nombre.innerHTML = `${numero} Maestro de sí mismo`
+            break
+        case 10:
+            nombre.innerHTML = `${numero} Líder duro o número del sol`
+            break
+        case 11:
+        case 22:
+        case 33:
+            nombre.innerHTML = `${numero} Número gurú`
+            break    
+        default:
+            nombre.innerHTML = `${numero} Algo anda mal`        
     }
 }
