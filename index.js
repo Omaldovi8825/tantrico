@@ -20,6 +20,39 @@ let numeros = {
 
 boton.onclick = despliegaNumero
 
+//determinar si el dia es valido
+fecha.day.addEventListener('blur', () => {
+    if (diaInvalido()){
+        alert('Día no válido')
+    }
+})
+
+function diaInvalido(){
+    return Number(fecha.day.value) > 31
+}
+
+//determinar si el mes es valido
+fecha.month.addEventListener('blur', () => {
+    if(mesInvalido()){
+        alert('Mes no válido')
+    }
+})
+
+function mesInvalido(){
+    return Number(fecha.month.value) > 12
+}
+
+//determina si el el año es valido
+fecha.year.addEventListener('blur', () => {
+    if(anioInvalido()){
+        alert('Año no válido')
+    }
+})
+
+function anioInvalido(){
+    return Number(fecha.year.value) < 1900 || Number(fecha.year.value) > 2022 
+}
+
 //click en boton que despliega todos los mumeros
 function despliegaNumero(){
     let digitos = {
@@ -39,9 +72,15 @@ function despliegaNumero(){
     let numeroDestino = digitos.cinco + digitos.seis + numeroDon
     let numeroMision = numeroAlma + digitos.tres + digitos.cuatro + numeroDestino
 
-    calculaNumeros(numeroAlma, numeros.soul)
-    calculaNumeros(numeroKarma, numeros.karm)
-    calculaNumeros(numeroDon, numeros.gift)
-    calculaNumeros(numeroDestino, numeros.destiny)
-    calculaNumeros(numeroMision, numeros.mission)
+    if(diaInvalido() || mesInvalido() || anioInvalido()){
+        alert('por favor revisa la fecha nuevamente')
+    } else if (Number(fecha.day.value) > 29 && Number(fecha.month.value) == 2){
+        alert(`No existe el ${fecha.day.value} de febrero`)
+    } else {
+        calculaNumeros(numeroAlma, numeros.soul)
+        calculaNumeros(numeroKarma, numeros.karm)
+        calculaNumeros(numeroDon, numeros.gift)
+        calculaNumeros(numeroDestino, numeros.destiny)
+        calculaNumeros(numeroMision, numeros.mission)
+    }
 }
