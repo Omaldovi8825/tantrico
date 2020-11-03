@@ -3,39 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Numeros tantricos</title>
+    <title>•Números tántricos </title>
+    <link rel="icon" type= "images/png" href="./imagenes/logo.png"/>
     <link rel="stylesheet" href="./css/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
+    <link href=https://fonts.googleapis.com/css2?family=Courgette&family=Grandstander:wght@200&family=Henny+Penny&family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
-<body>
-    <h1 class="titulo_principal">Calculadora de números tántricos</h1>
-    <p class="fecha">Escirbe tu fecha de nacimiento</p>
-    <p class="input">   
-        <input type="number" placeholder="dd" id="dia"> -
-        <input type="number" placeholder="mm" id="mes"> -
-        <input type="number" placeholder="yyyy" id="anio"> 
-    </p>
+<body background="./imagenes/fondo.jpg">
+    <div class="header"> •Calculadora de números tántricos•
+    </div>
+
+    <p class="fecha">Escribe tu fecha de nacimiento</p>
+  
+        <p class="fecha">
+            <input type="number" placeholder="DD" id="dia"> ▬
+            <input type="number" placeholder="MM" id="mes"> ▬
+            <input type="number" placeholder="YYYY" id="anio"> 
+        </p>
     <p class="boton1">
-        <button type="button" id="botoncito">Enviar</button>
+        <button class="botonfeo" type="button" id="botoncito">Enviar</button>
     </p>
-    <section class="seccion1">
-        <p>número de alma:
-            <span id="alma"></span> 
-        </p>
-        <p>número de karma:
-            <span id="karma"></span>
-        </p>
-        <p>número de don:
-            <span id="don"></span>
-        </p>
-        <p>número de destino:
-            <span id="destino"></span>
-        </p>
-        <p>número de misión:
-            <span id="mision"></span>
-        </p>
+    <section class="container">
+        
+            <div class="item">•Número de alma:
+                <span id="alma"></span> 
+            </div>
+            <div class="item">•Número de karma:
+                <span id="karma"></span>
+            </div>
+            <div class="item">•Número de don:
+                <span id="don"></span>
+            </div>
+            <div class="item">•Número de destino:
+                <span id="destino"></span>
+            </div>
+            <div class="item">•Número de misión:
+                <span id="mision"></span>
+            </div>
+
     </section>
     <!-- JS -->
     <script type="module" src="./index.js"></script>
+   
 </body>
 </html>

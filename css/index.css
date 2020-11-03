@@ -1,67 +1,77 @@
+.header{
+    font-family: 'Grandstander';
+    font-size: 2em;
+    background: rgba(0, 0, 0, 0.607);
+    color: white;
+    padding: 0.5em;
+    text-align: center;
+
+}
+
+
+.fecha {
+    text-align: center;
+    font-family: 'Grandstander';
+    font-size: 1.2em;
+    color:white;
+    text-shadow: 1px 1px 5px black;
+    
+}
+
+
 body {
     margin: 0;
-    background-image: url(https://sondeyoga.com/wp-content/uploads/2016/08/om-mantra-yoga.jpg);
     background-size: 100%;
-    background-repeat: no-repeat;
-    font-family: 'Kalam', cursive;
+    background-repeat: repeat-y;
 }
 
-.titulo_principal{
+.fecha input{
+    height:1.5em;
+    width: 2em;
     text-align: center;
-    font-size: 46px;
-}
+    font-family:'Patrick Hand';
+    font-size: 1.2em;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    border-radius: 5px;
 
-.fecha, .input {
-    text-align: center;
-}
-
-.input input{
-    width: 55px;
-    height: 28px;
-    text-align: center;
-    border: 2px solid black;
 }
 
 .boton1{
     text-align: center;
-    margin-top: 36px;
+    font-family: 'Henny Penny';
+    font-size: 20px;
+ 
 }
 
-.boton1 button {
-    padding: 15px;
-    background-color: black;
-    color: white;
-    font-size: 16px;
+.botonfeo{
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    border-color: darkgreen;
+    font-family: 'Patrick Hand';
+    font-size: 0.8em;
+    background-color: #e6b5b5;
 }
 
-.seccion1 {
+.container {
+    
     text-align: left;
-    margin-left: 5%;
-    font-size: 24px;
-    color: #584242;
+    font-size: 1.3em;
+    font-family: 'Grandstander';
+    color:rgb(17, 56, 75);
+    margin-left: 20%;
+    margin-right: 20%;
+    display; flex;
+   
+
 }
 
-.seccion1 span {
-    background-color: #ffffff9c;
-    border: 2px solid lavender;
-    color: black;
-}
-
-@media only screen and (max-width:500px){
-    body {
-    /*background-image: url(https://harmonia.la/imagen_nota/chakra_mantra_1.jpg);*/
-        background-repeat: repeat-y;    
-    }
-
-    .titulo_principal {
-        font-size: 38px;
-    }
-
-    .seccion1 {
-        font-size: 17px;
-    }
-
-    .boton1 {
-        margin-top: 22px;
-    }
+.item{
+    background: rgba(0, 0, 0, 0.507);
+    padding: 10px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: white;
+    padding: 1.5em;
 }
