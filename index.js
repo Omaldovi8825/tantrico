@@ -53,6 +53,23 @@ function anioInvalido(){
     return Number(fecha.year.value) < 1900 || Number(fecha.year.value) > 2022 
 }
 
+//funcion que determina si la fecha es valida
+function determinafechaInvalida(){
+    if(diaInvalido() || mesInvalido() || anioInvalido()){
+        return true    
+    } else if (Number(fecha.day.value) > 29 && Number(fecha.month.value) == 2) {
+        return true 
+    } else if (Number(fecha.day.value) > 30 && Number(fecha.month.value) == 4) {
+        return true  
+    } else if (Number(fecha.day.value) > 30 && Number(fecha.month.value) == 6) {
+        return true
+    } else if (Number(fecha.day.value) > 30 && Number(fecha.month.value) == 9) {
+        return true
+    } else if (Number(fecha.day.value) > 30 && Number(fecha.month.value) == 11) {
+        return true
+    } 
+}
+
 //click en boton que despliega todos los mumeros
 function despliegaNumero(){
     let digitos = {
@@ -72,15 +89,15 @@ function despliegaNumero(){
     let numeroDestino = digitos.cinco + digitos.seis + numeroDon
     let numeroMision = numeroAlma + digitos.tres + digitos.cuatro + numeroDestino
 
-    if(diaInvalido() || mesInvalido() || anioInvalido()){
-        alert('por favor revisa la fecha nuevamente')
-    } else if (Number(fecha.day.value) > 29 && Number(fecha.month.value) == 2){
-        alert(`No existe el ${fecha.day.value} de febrero`)
-    } else {
-        calculaNumeros(numeroAlma, numeros.soul)
-        calculaNumeros(numeroKarma, numeros.karm)
-        calculaNumeros(numeroDon, numeros.gift)
-        calculaNumeros(numeroDestino, numeros.destiny)
-        calculaNumeros(numeroMision, numeros.mission)
-    }
+
+        if(determinafechaInvalida()){
+            alert('fecha invalida')
+        } else {
+            calculaNumeros(numeroAlma, numeros.soul)
+            calculaNumeros(numeroKarma, numeros.karm)
+            calculaNumeros(numeroDon, numeros.gift)
+            calculaNumeros(numeroDestino, numeros.destiny)
+            calculaNumeros(numeroMision, numeros.mission)
+        }    
 }
+
