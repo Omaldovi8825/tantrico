@@ -1,3 +1,11 @@
+
+body {
+    margin: 0;
+    background-size: 100%;
+    background-repeat: repeat-y;
+}
+
+
 .header{
     font-family: 'Grandstander';
     font-size: 2em;
@@ -19,15 +27,9 @@
 }
 
 
-body {
-    margin: 0;
-    background-size: 100%;
-    background-repeat: repeat-y;
-}
-
 .fecha input{
     height:1.5em;
-    width: 2em;
+    width: 3em;
     text-align: center;
     font-family:'Patrick Hand';
     font-size: 1.2em;
@@ -53,25 +55,27 @@ body {
     background-color: #e6b5b5;
 }
 
-.container {
-    
+.container {   
     text-align: left;
     font-size: 1.3em;
     font-family: 'Grandstander';
     color:rgb(17, 56, 75);
     margin-left: 20%;
     margin-right: 20%;
-    display; flex;
-   
-
 }
 
 .item{
     background: rgba(0, 0, 0, 0.507);
-    padding: 10px;
     border-radius: 20px;
-    padding: 10px;
     margin-bottom: 10px;
     color: white;
     padding: 1.5em;
+}
+
+@media only screen and (max-width:550px){
+    .container{
+        font-size: 15px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }
