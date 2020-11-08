@@ -3,46 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>•Números tántricos </title>
-    <link rel="icon" type= "images/png" href="./imagenes/logo.png"/>
-    <link rel="stylesheet" href="./css/index.css">
+    <title>Tantrico-login</title>
     <link href=https://fonts.googleapis.com/css2?family=Courgette&family=Grandstander:wght@200&family=Henny+Penny&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/login.css">
 </head>
-<body background="./imagenes/fondo.jpg">
-    <div class="header"> •Calculadora de números tántricos•
+<body>
+    <div class="container">
+        <label for="username"><b>Usuario</b></label>
+        <input type="text" name="username" id="usname" placeholder="Usuario">
+        <label for="contrasena"><b>Contraseña</b></label>
+        <input type="password" id="pswd" name="contrasena" placeholder="Contraseña">
+        <a href="#" id="liga">Login</a>
+        <div class="abajito"></div>
     </div>
+    <script>
+        var user = document.getElementById('usname')
+        var password = document.getElementById('pswd')
+        var liga = document.getElementById('liga')
 
-    <p class="fecha">Escribe tu fecha de nacimiento</p>
-  
-        <p class="fecha">
-            <input type="number" placeholder="DD" id="dia"> ▬
-            <input type="number" placeholder="MM" id="mes"> ▬
-            <input type="number" placeholder="YYYY" id="anio"> 
-        </p>
-    <p class="boton1">
-        <button class="botonfeo" type="button" id="botoncito">Enviar</button>
-    </p>
-    <section class="container">
-        
-            <div class="item">•Número de alma:
-                <span id="alma"></span> 
-            </div>
-            <div class="item">•Número de karma:
-                <span id="karma"></span>
-            </div>
-            <div class="item">•Número de don:
-                <span id="don"></span>
-            </div>
-            <div class="item">•Número de destino:
-                <span id="destino"></span>
-            </div>
-            <div class="item">•Número de misión:
-                <span id="mision"></span>
-            </div>
+        liga.onclick = function(){
+            if(user.value === 'manina' && password.value === '12345'){
+                liga.href = './tantrico.html'
+            } else {
+                alert('usuario o contraseña inválidos')
+            }
+        }
 
-    </section>
-    <!-- JS -->
-    <script type="module" src="./index.js"></script>
-   
+    </script>
 </body>
 </html>

@@ -1,0 +1,67 @@
+body{
+    margin-top: 40px;
+    background-color: black;
+    background-image: url(../imagenes/fondo.jpg);
+    background-size: 100%;
+    background-repeat: repeat-y;
+    
+}
+
+.container{
+    width: 50%;
+    background-color:#000000ad;
+    text-align: center;
+    margin: auto;
+}
+
+.container label{
+    display: block;
+    padding: 20px;
+    font-size: 25px;
+    font-family: "Grandstander";
+    color: white;
+}
+
+.container input{
+    display: block;
+    padding: 10px;
+    margin: auto;
+    width: 50%;
+}
+
+.container a{
+    width: 100px;
+    padding: 5px 10px;
+    color: rgb(49, 42, 42);
+    background-color: #e6b5b5;
+    font-size: 20px;
+    font-family: 'Patrick Hand';
+    text-decoration: none;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    /* pointer-events: none; */
+}
+
+.abajito{
+    height: 50px;
+}
+
+@media only screen and (max-width:500px){
+    .container{
+        width: 80%;
+    }
+
+    .container input{
+        width: 70%;
+    }
+
+    .container a{
+        width: 59px;
+        margin-top: 55px;
+    }
+
+    .container label{
+        padding: 40px 0px 20px 0;
+    }
+}
