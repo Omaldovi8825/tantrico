@@ -83,7 +83,7 @@ function despliegaNumero(){
         ocho: Number(String(fecha.year.value).charAt(3)),
     }  
 
-    let numeroAlma = digitos.uno + digitos.dos
+    let numeroAlma = Number(fecha.day.value)
     let numeroKarma = Number(fecha.month.value)
     let numeroDon = digitos.siete + digitos.ocho
     let numeroDestino = digitos.cinco + digitos.seis + numeroDon
