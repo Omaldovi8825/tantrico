@@ -87,7 +87,7 @@ function despliegaNumero(){
     let numeroKarma = Number(fecha.month.value)
     let numeroDon = digitos.siete + digitos.ocho
     let numeroDestino = digitos.cinco + digitos.seis + numeroDon
-    let numeroMision = numeroAlma + digitos.tres + digitos.cuatro + numeroDestino
+    let numeroMision = digitos.uno + digitos.dos + digitos.tres + digitos.cuatro + digitos.cinco + digitos.seis + digitos.siete + digitos.ocho
 
 
         if(determinafechaInvalida()){
